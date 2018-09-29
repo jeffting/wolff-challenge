@@ -2,7 +2,7 @@
     <div class="nav-head">
         <h1 class="main" @click="changeScreen(false)">Kicking Assets</h1>
         <h2 @click="changeScreen('win')" class="win-calc">Win Calculator</h2>
-        <a href="https://www.google.com/"><h2 class="graphs">Graphs</h2></a>
+        <a href="http://is201project.thesacredgrover.com/html/tab.html"><h2 class="graphs">Graphs</h2></a>
         <h2 @click="changeScreen('summary')" class="summary">Summary</h2>
     </div>
 </template>
