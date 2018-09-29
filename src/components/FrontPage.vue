@@ -5,16 +5,30 @@
             <header class="big-header">Football Gurus</header>
         <div><img class="football" src="https://www.pngarts.com/files/3/American-Football-PNG-Image-With-Transparent-Background.png"/></div>
         </div>
-        <h2 class="section-header">SECTION 1</h2>
+        <h2 class="section-header">QUESTION</h2>
         <div class="text-container">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac pulvinar mauris. Aenean fermentum ullamcorper sem sed posuere. Phasellus ac placerat metus. Curabitur dictum est non felis finibus luctus. Fusce et metus consectetur, accumsan magna vel, iaculis enim. Proin in tortor ut velit euismod dapibus. Maecenas commodo velit eget feugiat pretium. Fusce non tortor odio. Vestibulum eros dui, sagittis id enim a, efficitur commodo urna. Nulla pulvinar massa et lacus sollicitudin, sit amet scelerisque elit finibus. Etiam ac nisi id leo aliquet tristique eget sed sapien. Sed eu lectus sit amet nunc vehicula volutpat. Cras lectus felis, convallis vel risus et, aliquet pulvinar sapien. Duis enim sem, varius eget sollicitudin eu, aliquam at lacus.
+We wanted to know what it takes to achieve football excellence. How can we end the cycle of bad teams being bad and good teams being great? What will it take for your school to go undefeated and receive the impact that follows.        </div>
+
+        <h2 class="section-header">PROCESS</h2>
+        <div class="text-container">
+            <ul>
+                <li>Determined what factors were most important to a college football program's success.</li>
+                <li>Gathered data using sportsreference.com, ESPN, and NCAA member school financials; we compiled the information into Excel.</li>
+                <li>Using Tableau, we created visual analyses to understand the largest impact drivers on winning percentage.</li>
+                <li>Developed a regression analysis through the use of Stata to predict winning percentage.</li>
+                <li>Created an interactive website to accurately portray findings.</li>
+            </ul>
+        </div>
+        <h2 class="section-header">IMPACT</h2>
+        <div class="text-container">
+            <ul>
+                <li>Improve college enrollment</li>
+                <li>Fund other academic and sports programs</li>
+                <li>Become a top tier university</li>
+            </ul>
         </div>
         <div class="img-container">
             <img src="https://www.saturdaydownsouth.com/wp-content/uploads/2016/01/Building-UT-Brick-by-MEME.jpg"/>
-        </div>
-        <h2 class="section-header">SECTION 2</h2>
-        <div class="text-container">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac pulvinar mauris. Aenean fermentum ullamcorper sem sed posuere. Phasellus ac placerat metus. Curabitur dictum est non felis finibus luctus. Fusce et metus consectetur, accumsan magna vel, iaculis enim. Proin in tortor ut velit euismod dapibus. Maecenas commodo velit eget feugiat pretium. Fusce non tortor odio. Vestibulum eros dui, sagittis id enim a, efficitur commodo urna. Nulla pulvinar massa et lacus sollicitudin, sit amet scelerisque elit finibus. Etiam ac nisi id leo aliquet tristique eget sed sapien. Sed eu lectus sit amet nunc vehicula volutpat. Cras lectus felis, convallis vel risus et, aliquet pulvinar sapien. Duis enim sem, varius eget sollicitudin eu, aliquam at lacus.
         </div>
     </div>
 </template>
@@ -24,6 +38,10 @@ export default {
 }
 </script>
 <style scoped>
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
 .big-header {
     font-size: 40px;
     margin-top: 20px;
@@ -36,6 +54,8 @@ export default {
 }
 .img-container {
     text-align: center;
+    margin-bottom: 50px;
+
 }
 .section-header {
     margin-top: 30px;

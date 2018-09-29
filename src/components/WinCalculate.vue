@@ -1,11 +1,6 @@
 <template>
     <div>
-        <header class="win-header">Calculate your team</header>
-        <span>Filter by</span>
-        <b-dropdown id="ddown1" :text="filter" class="m-md-2">
-            <b-dropdown-item @click="setDropdown('win')">Win</b-dropdown-item>
-            <b-dropdown-item @click="setDropdown('option2')">Option 2</b-dropdown-item>
-        </b-dropdown>
+        <header class="win-header">Calculate your team's wins</header>
         <div class="flex-container">
             <div class="all-inputs-container">
             <section class="input-container">
@@ -114,6 +109,10 @@
                 <div v-if="displayWinPercentage">Record ({{ gamesWon }}, {{ 13-gamesWon }})</div>
             </div>
         </div>
+        <div v-if="displayVideo" class="player-div">
+            <h2>Number of W's your getting</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/u_aLESDql1U?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
     </div>
 </template>
 <script>
@@ -130,7 +129,7 @@ export default {
                 status: 'true', value: 0, weight: .000000000124, average: 14254710, hiddenVal: 0
             },
             recruit: {
-                status: "true", value: 0, weight: .0015893, average: 2.76, hiddenVal: 0
+                status: "true", value: 0, weight: .02, average: 2.76, hiddenVal: 0
             },
             ppg: {
                 status: "true", value: 0, weight: .0167049, average: 27.3, hiddenVal: 0
@@ -151,7 +150,8 @@ export default {
                 status: "true", value: 0, weight: .0039645, average: 0, hiddenVal: 0
             },
             allObjects: [],
-            gamesWon: 0
+            gamesWon: 0,
+            displayVideo: false
         }
     },
     created() {
@@ -182,10 +182,13 @@ export default {
             sum = sum * 100;
             if (sum >= 100 ) {
                 this.winPercentage = 100.0000;
+                this.displayVideo = true;
             } else if (sum <= 0 ){
                 this.winPercentage = 0.0000
+                this.displayVideo = false;
             } else {
                 this.winPercentage = sum.toFixed(4);
+                this.displayVideo = false;
             }
             this.gamesWon = Math.round(this.winPercentage * 13 / 100);
             //a = (a-(a%1000))/1000;
@@ -194,14 +197,16 @@ export default {
             this.sos.hiddenVal = (75 - this.sos.hiddenVal) / 3.75;
         },
         calcRank() {
-         if (this.rank.value > 25) {
-                this.rank.hiddenVal = 0;
-                this.rank.value = 0;
-            }
-            if (this.rank.value !== 0) {
-                this.rank.hiddenVal = 26-this.rank.value;
-            } else {
-                this.rank.hiddenVal = 0;
+            if (this.rank.status === "true") {
+                if (this.rank.value > 25) {
+                        this.rank.hiddenVal = 0;
+                        this.rank.value = 0;
+                    }
+                    if (this.rank.value !== 0) {
+                        this.rank.hiddenVal = 26-this.rank.value;
+                    } else {
+                        this.rank.hiddenVal = 0;
+                    }
             }
         },
         calcConf() {
@@ -269,6 +274,11 @@ export default {
 }
 </script>
 <style scoped>
+.player-div {
+    margin-top: 30px;
+    margin: auto;
+    text-align: center;
+}
 .all-inputs-container {
     flex-grow: 1;
 }
