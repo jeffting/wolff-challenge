@@ -18,11 +18,13 @@ export default {
     display: flex;
     align-items: baseline;
     background-color: #0c2360;
-    margin-left: -400px;
+    /* margin-left: -400px;
     padding-left: 400px;
     margin-right: -400px;
-    padding-right: 400px;
+    padding-right: 400px; */
     box-shadow: 0px 10px 10px 0px;
+    overflow: hidden;
+    padding-left: 20px;
     }
 .main {
     font-family: "Lucida Console", Monaco, monospace;
